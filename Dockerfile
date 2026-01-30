@@ -37,7 +37,6 @@ ENV NODE_ENV=production
 USER node
 
 USER node
-CMD ["node", "dist/index.js"]
-CMD bash -lc 'node -v && ls -la dist && node dist/index.js'
+CMD bash -lc 'set -euxo pipefail; echo "PORT=$PORT"; pwd; ls -la; echo "---- dist ----"; ls -la dist || true; echo "---- node entry ----"; node dist/index.js'
 
 
