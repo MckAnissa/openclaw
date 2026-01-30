@@ -36,4 +36,6 @@ ENV NODE_ENV=production
 # This reduces the attack surface by preventing container escape via root privileges
 USER node
 
-CMD ["node", "dist/index.js"]
+COPY entrypoint.sh /entrypoint.sh
+CMD ["bash", "/entrypoint.sh"]
+
