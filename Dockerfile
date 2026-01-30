@@ -38,5 +38,6 @@ USER node
 
 USER node
 CMD ["node", "dist/index.js"]
+CMD bash -lc 'node -v && ls -la dist && node dist/index.js'
 
 
