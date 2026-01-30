@@ -37,6 +37,6 @@ ENV NODE_ENV=production
 USER node
 
 USER node
-CMD bash -lc 'set -euxo pipefail; echo "PORT=$PORT"; pwd; ls -la; echo "---- dist ----"; ls -la dist || true; echo "---- node entry ----"; node dist/index.js'
+CMD bash -lc 'node dist/entry.js gateway --host 0.0.0.0 --port ${PORT:-8080} --verbose'
 
 
